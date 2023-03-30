@@ -8,26 +8,30 @@
         <form>
             <p>개인정보(필수)</p>
             <p><label>이름:
-                <input name = "text" type = "text" size = "25">
+                <input name = "text" type = "text" placeholder="이름을 입력하세요." size = "25" autofocus required/>
             </label></p>
             <p><label>생일:
-                <input name = "birthday" type = "date" size = "25"> 
+                <input name = "birthday" type = "date" size = "25"/> 
             </label></p>
             <p><label>학년:
-                <input name = "number" type = "number" size = "25"> 
+                <input name = "number" type = "number" size = "25"/> 
             </label></p>
             <p><label>전화번호:
-                <input name = "tel" type = "tel" size = "25"> 
+                <input name = "tel" type = "tel" placeholder="(###)###-####" size = "25"/> 
             </label></p>
             <p><label>유저 아이디:
-                <input name = "text" type = "text" size = "25"> 
+                <input name = "text" type = "text" placeholder="아이디를 입력하세요." size = "25" required/> 
             </label></p>
             <p><label>비밀번호:
-                <input name = "text" type = "text" size = "25"> 
+                <input name = "text" type = "text" placeholder="비밀번호를 입력하세요." size = "25" required/> 
             </label></p>
             <p><label>비밀번호 확인:
-                <input name = "text" type = "text" size = "25"> 
+                <input name = "text" type = "text" placeholder="비밀번호 확인"size = "25" required/> 
             </label></p>
+            <p>
+                <input type = "submit" value = "Submit" />
+                <input type = "reset" value = "Clear" />
+            </p>
 
         </form>
     </body>
