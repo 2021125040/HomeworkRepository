@@ -1,0 +1,11 @@
+h1{
+    font-size : 25pt;
+    font-family : monospace, arial, sans-serif;
+}
+body {
+    background-color : rgb(203, 246, 253)
+}
+form.label{
+	font-size : 25pt;
+    font-family : monospace, arial, sans-serif;
+}
