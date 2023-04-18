@@ -1,0 +1,88 @@
+h1{
+    font-size : 26pt;
+    font-family : Impact, sans-serif, arial;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
+
+input[type=submit]{
+    background-color: #04AA6D;
+    border: none;
+    width: 100px;
+    height: 40px;
+    color: white;
+    padding: 10px 32px;
+    cursor: pointer;
+}
+
+input[type=reset]{
+    background-color: #ff0000;
+    border: none;
+    width: 100px;
+    height: 40px;
+    color: white;
+    padding: 10px 32px;
+    cursor: pointer;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px;
+  }
+  
+a:hover, a:active {
+    border-top: solid 3px red;
+    border-bottom: solid 3px red;
+  }
+
+
+/*
+이미지 위 텍스트 처리
+*/
+.box-wrap {
+	display: flex;
+}
+.box {
+	position: relative;
+}
+.box img {
+	height : "50px";
+}
+.box .info {
+	color: #fff;
+	position: absolute; left: 0; bottom: 0;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+	opacity: 0;
+	transition: opacity 0.35s ease-in-out;
+}
+.box:hover .info {
+	opacity: 1;
+}
+
+.box .info p {
+	font-size: 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-transform: uppercase;
+}
