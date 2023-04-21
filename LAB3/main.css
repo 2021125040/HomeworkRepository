@@ -1,21 +1,24 @@
 h1{
     font-size : 26pt;
-    font-family : Impact, sans-serif, arial;
+    font-family : sans-serif, arial;
     animation-duration: 3s;
     animation-name: slidein;
 }
+
+
 
 @keyframes slidein {
     from {
       margin-left: 100%;
       width: 300%;
     }
-  
     to {
       margin-left: 0%;
       width: 100%;
     }
 }
+
+
 
 
 input[type=submit]{
@@ -59,30 +62,91 @@ a:hover, a:active {
 */
 .box-wrap {
 	display: flex;
+    flex-direction : row;
+    justify-content: flex-start;
 }
 .box {
-	position: relative;
+    transition: 2s ;
 }
 .box img {
-	height : "50px";
+	width : 60px;
+    margin-right : 3px;
 }
 .box .info {
-	color: #fff;
-	position: absolute; left: 0; bottom: 0;
-	background: rgba(0,0,0,0.5);
-	width: 100%;
-	padding: 15px;
+	color: rgb(0, 0, 0);
+	position: absolute; 
+    right: 10; bottom: 0;
 	box-sizing: border-box;
 	opacity: 0;
-	transition: opacity 0.35s ease-in-out;
+}
+.box:hover {
+    transform: scale(1.4);
 }
 .box:hover .info {
 	opacity: 1;
 }
-
 .box .info p {
-	font-size: 15px;
+	font-size: 20px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	text-transform: uppercase;
 }
+
+
+.flexible-container {
+    display : flex;
+    flex-direction : row; /*row, row-reverse, column, column-reverse*/
+    flex-wrap : wrap;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.main-container {
+    display : flex;
+    flex-direction : column;
+}
+
+.content-container{
+    display : flex;
+    flex-direction : column;
+}
+.column-container {
+    display : flex;
+    flex-direction : row;
+}
+
+.column {
+    border: 1px solid rgb(0, 0, 0);
+    margin : 2px;
+    width : 50%;
+    height : 200px;
+}
+
+
+@media (max-width: 480px) {
+    .flexible-container {
+        display : flex;
+        flex-direction : column; /*row, row-reverse, column, column-reverse*/
+        flex-wrap : wrap;
+        justify-content: flex-start;
+    }
+ 
+}
+@media (max-width: 800px) {
+    .flexible-container {
+        display : flex;
+        flex-direction : column; /*row, row-reverse, column, column-reverse*/
+        flex-wrap : wrap;
+        justify-content: flex-start;
+    }
+    .column-container {
+        display : flex;
+        flex-direction : column;
+    }
+    .column {
+        border: 1px solid rgb(0, 0, 0);
+        margin : 2px;
+        width : 100%;
+        height : 300px;
+    }
+}
+
