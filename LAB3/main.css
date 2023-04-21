@@ -1,11 +1,9 @@
 h1{
     font-size : 26pt;
     font-family : sans-serif, arial;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-name: slidein;
 }
-
-
 
 @keyframes slidein {
     from {
@@ -92,7 +90,7 @@ a:hover, a:active {
 }
 
 
-.flexible-container {
+.flex-container {
     display : flex;
     flex-direction : row; /*row, row-reverse, column, column-reverse*/
     flex-wrap : wrap;
@@ -123,7 +121,7 @@ a:hover, a:active {
 
 
 @media (max-width: 480px) {
-    .flexible-container {
+    .flex-container {
         display : flex;
         flex-direction : column; /*row, row-reverse, column, column-reverse*/
         flex-wrap : wrap;
@@ -132,7 +130,7 @@ a:hover, a:active {
  
 }
 @media (max-width: 800px) {
-    .flexible-container {
+    .flex-container {
         display : flex;
         flex-direction : column; /*row, row-reverse, column, column-reverse*/
         flex-wrap : wrap;
