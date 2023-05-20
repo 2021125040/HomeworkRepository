@@ -1,0 +1,47 @@
+{
+    "books": [
+      {
+        "title": "혼자 공부하는 머신러닝+딥러닝",
+        "price": 23400,
+        "image": "https://image.yes24.com/goods/96024871/L",
+        "description": "1:1 과외하듯 배우는 인공지능 자습서"
+      },
+      {
+        "title": "핸즈온 머신러닝",
+        "price": 49500,
+        "image": "https://image.yes24.com/goods/89959711/L",
+        "description": "사이킷런, 케라스, 텐서플로 2를 활용한 머신러닝, 딥러닝 완벽 실무"
+      },
+      {
+        "title": "파이썬 머신러닝 완벽 가이드",
+        "price": 36000,
+        "image": "https://image.yes24.com/goods/108824557/L",
+        "description": "다양한 캐글 예제와 함께 기초 알고리즘부터 최신 기법까지 배우는"
+      },
+      {
+        "title": "개발자를 위한 머신러닝&딥러닝",
+        "price": 30600,
+        "image": "https://image.yes24.com/goods/112028850/L",
+        "description": "인공지능 개발자로 레벨 업하기! 신경망 기초부터 컴퓨터 비전, 자연어 처리, 시계열 예측까지"
+      },
+      {
+        "title": "파이썬 라이브러리를 활용한 머신러닝",
+        "price": 29700,
+        "image": "https://image.yes24.com/goods/107680777/L",
+        "description": "사이킷런 핵심 개발자가 쓴 머신러닝과 데이터 과학 실무서 "
+      },
+      {
+        "title": "머신러닝을 위한 파이썬 한 조각",
+        "price": 21600,
+        "image": "https://image.yes24.com/goods/87663679/L",
+        "description": "파이썬으로 이해하는 인공지능의 시작"
+      },
+      {
+        "title": " 나의 첫 머신러닝/딥러닝",
+        "price": 23400,
+        "image": "https://image.yes24.com/goods/91332834/L",
+        "description": "파이썬으로 구현해보는 필수 머신러닝/딥러닝 알고리즘"
+      }
+    ]
+  }
+  
