@@ -57,6 +57,7 @@ a:hover, a:active {
   width: 250px; height : 300px;
   border: 7px solid #283593;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.4); 
+  Text-Align : Center;
 }
   
 .bookContainer img{
