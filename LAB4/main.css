@@ -5,19 +5,6 @@ h1{
     animation-name: slidein;
 }
 
-@keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-}
-
-
-
 
 input[type=submit]{
     background-color: #04AA6D;
@@ -58,37 +45,48 @@ a:hover, a:active {
 /*
 이미지 위 텍스트 처리
 */
-.box-wrap {
-	display: flex;
-    flex-direction : row;
-    justify-content: flex-start;
+#booksContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding : 15px;
+  }
+  
+.bookContainer {
+  position: relative;
+  width: 250px; height : 300px;
+  border: 7px solid #283593;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.4); 
 }
-.box {
-    transition: 2s ;
-}
-.box img {
-	width : 60px;
-    margin-right : 3px;
-}
-.box .info {
-	color: rgb(0, 0, 0);
-	position: absolute; 
-    right: 10; bottom: 0;
-	box-sizing: border-box;
-	opacity: 0;
-}
-.box:hover {
-    transform: scale(1.4);
-}
-.box:hover .info {
-	opacity: 1;
-}
-.box .info p {
-	font-size: 20px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  
+.bookContainer img{
+  height : 60%;
 }
 
+.bookContainer .bookInfo {
+    color: #fff;
+    position: absolute; left: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    width: 250px;
+    padding: 15px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.bookContainer:hover .bookInfo {
+    opacity: 1;
+}
+
+.bookContainer.bookInfo p{
+    font-size: 24px;
+    padding-bottom: 0.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  
 
 .flex-container {
     display : flex;
@@ -98,27 +96,16 @@ a:hover, a:active {
     text-align: center;
 }
 
+
 .main-container {
     display : flex;
-    flex-direction : column;
+    flex-direction : row ;
 }
 
-.content-container{
-    display : flex;
-    flex-direction : column;
+ul {
+    background-color: #ccc;
+    width : 400px;
 }
-.column-container {
-    display : flex;
-    flex-direction : row;
-}
-
-.column {
-    border: 1px solid rgb(0, 0, 0);
-    margin : 2px;
-    width : 50%;
-    height : 200px;
-}
-
 
 @media (max-width: 480px) {
     .flex-container {
