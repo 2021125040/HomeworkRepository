@@ -30,7 +30,14 @@
                     </select>
                 </li>
                 <li>Enter search item: <input type="text" id="searchInput"></li>
-                <li>Choose a sort: </li>
+                <li>
+                    Choose a sort:
+                    <select id="sortSelect">
+                        <option value="default">Default</option>
+                        <option value="asc">Price: Low to High</option>
+                        <option value="desc">Price: High to Low</option>
+                    </select>
+                </li>
             </ul>
 
             <!--Select book-->
@@ -42,64 +49,73 @@
                     const booksContainer = document.getElementById('booksContainer');
 
                     const fetchBooksForPage = () => {
-                    fetch('product.json')
-                        .then(response => response.json())
-                        .then(data => {
-                        const books = data.books;
+                        fetch('product.json')
+                          .then(response => response.json())
+                          .then(data => {
+                            const books = data.books;
+                      
+                            const selectedCategory = categorySelect.value;
+                            const searchKeyword = searchInput.value.toLowerCase();
+                            const sortOption = sortSelect.value;
+                      
+                            const filteredBooks = selectedCategory === 'all' ? books : books.filter(book => book.category === selectedCategory);
+                      
+                            const searchResult = filteredBooks.filter(book => book.title.toLowerCase().includes(searchKeyword));
+                      
+                            let sortedBooks;
+                            if (sortOption === 'asc') {
+                              sortedBooks = searchResult.sort((a, b) => a.price - b.price);
+                            } else if (sortOption === 'desc') {
+                              sortedBooks = searchResult.sort((a, b) => b.price - a.price);
+                            } else {
+                              sortedBooks = searchResult;
+                            }
+                      
+                            if (currentPage === 1) {
+                              booksContainer.innerHTML = '';
+                            }
+                      
+                            const nextPageBooks = sortedBooks.slice((currentPage - 1) * 10, currentPage * 10);                       
+                            nextPageBooks.forEach(book => {
+                                const title = book.title;
+                                const price = book.price;
+                                const image = book.image;
+                                const description = book.description;
 
-                        const selectedCategory = categorySelect.value;
-                        const searchKeyword = searchInput.value.toLowerCase();
+                                // Create HTML elements to display the book information
+                                const bookContainer = document.createElement('div');
+                                bookContainer.classList.add('bookContainer');
 
-                        const filteredBooks = selectedCategory === 'all' ? books : books.filter(book => book.category === selectedCategory);
+                                const bookTitle = document.createElement('h2');
+                                bookTitle.textContent = title;
+                                bookContainer.appendChild(bookTitle);
 
-                        const searchResult = filteredBooks.filter(book => book.title.toLowerCase().includes(searchKeyword));
+                                const bookImage = document.createElement('img');
+                                bookImage.src = image;
+                                bookImage.alt = title;
+                                bookContainer.appendChild(bookImage);
 
-                        if (currentPage === 1) {
-                            booksContainer.innerHTML = '';
-                        }
+                                const bookInfo = document.createElement('div');
+                                bookInfo.classList.add('bookInfo');
 
-                        const nextPageBooks = searchResult.slice((currentPage - 1) * 10, currentPage * 10);
+                                const bookPrice = document.createElement('p');
+                                bookPrice.textContent = 'Price: ' + price + '원';
+                                bookInfo.appendChild(bookPrice);
 
-                        nextPageBooks.forEach(book => {
-                            const title = book.title;
-                            const price = book.price;
-                            const image = book.image;
-                            const description = book.description;
+                                const bookDescription = document.createElement('p');
+                                bookDescription.textContent = description;
+                                bookInfo.appendChild(bookDescription);
 
-                            // Create HTML elements to display the book information
-                            const bookContainer = document.createElement('div');
-                            bookContainer.classList.add('bookContainer');
-
-                            const bookTitle = document.createElement('h2');
-                            bookTitle.textContent = title;
-                            bookContainer.appendChild(bookTitle);
-
-                            const bookImage = document.createElement('img');
-                            bookImage.src = image;
-                            bookImage.alt = title;
-                            bookContainer.appendChild(bookImage);
-
-                            const bookInfo = document.createElement('div');
-                            bookInfo.classList.add('bookInfo');
-
-                            const bookPrice = document.createElement('p');
-                            bookPrice.textContent = 'Price: ' + price + '원';
-                            bookInfo.appendChild(bookPrice);
-
-                            const bookDescription = document.createElement('p');
-                            bookDescription.textContent = description;
-                            bookInfo.appendChild(bookDescription);
-
-                            bookContainer.appendChild(bookInfo);
-                            booksContainer.appendChild(bookContainer);
-                        });
-
-                        currentPage++;
-                        })
-                        .catch(error => {
-                        console.error('Error loading the JSON file:', error);
-                        });
-                    };
+                                bookContainer.appendChild(bookInfo);
+                                booksContainer.appendChild(bookContainer);
+                            });
+                            currentPage++;
+                          })
+                          .catch(error => {
+                            console.error('Error loading the JSON file:', error);
+                          });
+                      };
+                      
 
                     const checkScrollBottom = () => {
                     const scrollPosition = window.innerHeight + window.pageYOffset;
@@ -112,24 +128,27 @@
                     };
 
                     categorySelect.addEventListener('change', () => {
-                    currentPage = 1;
-                    fetchBooksForPage();
+                        currentPage = 1;
+                        fetchBooksForPage();
                     });
 
                     searchInput.addEventListener('input', () => {
-                    currentPage = 1;
-                    fetchBooksForPage();
+                        currentPage = 1;
+                        fetchBooksForPage();
                     });
 
+                    sortSelect.addEventListener('change', () => {
+                        currentPage = 1;
+                        fetchBooksForPage();
+                    });
                     window.onscroll = checkScrollBottom;
-
                     fetchBooksForPage();
 
                 </script>
 
         </div>
-
-        
-            <hr>
+        <hr>
     </body>
 </html>
+
+
