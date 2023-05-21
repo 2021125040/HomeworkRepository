@@ -148,13 +148,6 @@
         "category" : "C"
       },
       {
-        "title": "이것이 자료구조+알고리즘이다 with C 언어",
-        "price": 30600,
-        "image": "https://image.yes24.com/goods/35094862/L",
-        "description": " 문제 해결 능력을 키워주는 자료구조+알고리즘 입문서",
-        "category" : "C"
-      },
-      {
         "title": "WONDER C 놀랄 만큼 재미있는 C언어 기초",
         "price": 32000,
         "image": "https://image.yes24.com/goods/105626550/L",
@@ -178,7 +171,7 @@
       {
         "title": "자기주도 C언어 프로그래밍",
         "price": 19000,
-        "image": "https://image.yes24.com/goods/105504683/L",
+        "image": "http://image.yes24.com/goods/106156496/XL",
         "description": "제10판",
         "category" : "C"
       }
