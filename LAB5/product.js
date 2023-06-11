@@ -1,0 +1,205 @@
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('product.db');
+const products = [
+    {
+      "title": "혼자 공부하는 머신러닝+딥러닝",
+      "price": 23400,
+      "image": "https://image.yes24.com/goods/96024871/L",
+      "description": "1:1 과외하듯 배우는 인공지능 자습서",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "핸즈온 머신러닝",
+      "price": 49500,
+      "image": "https://image.yes24.com/goods/89959711/L",
+      "description": "사이킷런, 케라스, 텐서플로 2를 활용한 머신러닝, 딥러닝 완벽 실무",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "파이썬 머신러닝 완벽 가이드",
+      "price": 36000,
+      "image": "https://image.yes24.com/goods/108824557/L",
+      "description": "다양한 캐글 예제와 함께 기초 알고리즘부터 최신 기법까지 배우는",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "개발자를 위한 머신러닝&딥러닝",
+      "price": 30600,
+      "image": "https://image.yes24.com/goods/112028850/L",
+      "description": "인공지능 개발자로 레벨 업하기! 신경망 기초부터 컴퓨터 비전, 자연어 처리, 시계열 예측까지",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "나는 파이썬으로 머신러닝한다 1",
+      "price": 19800,
+      "image": "https://image.yes24.com/goods/109838545/L",
+      "description": "코알못을 위한 인공지능 순한맛",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "머신러닝 시스템 디자인 패턴",
+      "price": 28800,
+      "image": "https://image.yes24.com/goods/105119319/L",
+      "description": "AI 엔지니어를 위한",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "개발자를 위한 머신러닝&딥러닝",
+      "price": 30600,
+      "image": "https://image.yes24.com/goods/112028850/L",
+      "description": "인공지능 개발자로 레벨 업하기! 신경망 기초부터 컴퓨터 비전, 자연어 처리, 시계열 예측까지",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "Must Have 머신러닝·딥러닝 문제해결 전략 ",
+      "price": 34200,
+      "image": "https://image.yes24.com/goods/107680777/L",
+      "description": "캐글 수상작 리팩터링으로 배우는 문제해결 프로세스와 전략",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "오렌지3로 알아가는 머신러닝 데이터 분석",
+      "price": 3900,
+      "image": "https://image.yes24.com/goods/103165170/L",
+      "description": "NaN",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": " 나의 첫 머신러닝/딥러닝",
+      "price": 23400,
+      "image": "https://image.yes24.com/goods/91332834/L",
+      "description": "파이썬으로 구현해보는 필수 머신러닝/딥러닝 알고리즘",
+      "category" : "Machine Learning"
+    },
+    {
+      "title": "혼자 공부하는 파이썬",
+      "price": 19800,
+      "image": "https://image.yes24.com/goods/109625396/L",
+      "description": "1:1 과외하듯 배우는 프로그래밍 자습서",
+      "category" : "Python"
+    },
+    {
+      "title": "Do it! 점프 투 파이썬",
+      "price": 16920,
+      "image": "https://image.yes24.com/goods/74419916/L",
+      "description": "파이썬 3 최신 버전 반영, 개정판",
+      "category" : "Python"
+    },
+    {
+      "title": "챗GPT를 활용한 40가지 파이썬 프로그램 만들기 ",
+      "price": 15930,
+      "image": "https://image.yes24.com/goods/118342272/L",
+      "description": "파이썬 초보 개발자를 위한 챗GPT 실전 활용서",
+      "category" : "Python"
+    },
+    {
+      "title": "파이썬 한권으로 끝내기",
+      "price": 26100,
+      "image": "https://image.yes24.com/goods/74419916/L",
+      "description": "데이터분석전문가(ADP) + 빅데이터분석기사 실기대비 ",
+      "category" : "Python"
+    },
+    {
+      "title": "Java의 정석",
+      "price": 27000,
+      "image": "https://image.yes24.com/goods/24259565/L",
+      "description": "최신 Java 8.0 포함",
+      "category" : "Java"
+    },
+    {
+      "title": "이펙티브 자바 Effective Java 3/E",
+      "price": 32400,
+      "image": "https://image.yes24.com/goods/65551284/L",
+      "description": "NaN",
+      "category" : "Java"
+    },
+    {
+      "title": " 이것이 자바다",
+      "price": 32400,
+      "image": "https://image.yes24.com/goods/112208302/L",
+      "description": "교육 현장에서 가장 많이 쓰이는 JAVA 프로그래밍의 기본서",
+      "category" : "Java"
+    },
+    {
+      "title": "혼자 공부하는 C 언어",
+      "price": 23400,
+      "image": "https://image.yes24.com/goods/118982111/L",
+      "description": "1:1 과외하듯 배우는 프로그래밍 자습서",
+      "category" : "C"
+    },
+    {
+      "title": "코딩 자율학습 나도코딩의 C 언어 입문",
+      "price": 23400,
+      "image": "http://image.yes24.com/goods/113791780/XL",
+      "description": "C 언어의 완공을 돕는 프로그래밍 자습서",
+      "category" : "C"
+    },
+    {
+      "title": "Do it! C 언어 입문",
+      "price": 22500,
+      "image": "https://image.yes24.com/goods/35094862/L",
+      "description": "NaN",
+      "category" : "C"
+    },
+    {
+      "title": "이것이 자료구조+알고리즘이다 with C 언어",
+      "price": 30600,
+      "image": "https://image.yes24.com/goods/35094862/L",
+      "description": " 문제 해결 능력을 키워주는 자료구조+알고리즘 입문서",
+      "category" : "C"
+    },
+    {
+      "title": "WONDER C 놀랄 만큼 재미있는 C언어 기초",
+      "price": 32000,
+      "image": "https://image.yes24.com/goods/105626550/L",
+      "description": "2022 세종도서 학술부문 선정도서",
+      "category" : "C"
+    },
+    {
+      "title": "쉽게 풀어쓴 C언어 Express",
+      "price": 30000,
+      "image": "https://image.yes24.com/goods/63753244/L",
+      "description": "개정3판",
+      "category" : "C"
+    },
+    {
+      "title": "C언어 for Beginner",
+      "price": 26000,
+      "image": "https://image.yes24.com/goods/105504683/L",
+      "description": "제대로 이해하며 개발하는 C 프로그래밍",
+      "category" : "C"
+    },
+    {
+      "title": "자기주도 C언어 프로그래밍",
+      "price": 19000,
+      "image": "http://image.yes24.com/goods/106156496/XL",
+      "description": "제10판",
+      "category" : "C"
+    }
+
+  ]
+// Create the products table if it doesn't exist
+db.run(`CREATE TABLE IF NOT EXISTS products (
+  product_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  product_image VARCHAR(255),
+  product_title VARCHAR(255),
+  product_price DECIMAL(10, 2),
+  product_category VARCHAR(50)
+)`);
+
+// Function to insert a product into the table
+function insertProduct(image, title, price, category) {
+  db.run(`INSERT INTO products (product_image, product_title, product_price, product_category)
+          VALUES (?, ?, ?, ?)`, [image, title, price, category], function (err) {
+    if (err) {
+      console.error(err.message);
+    } else {
+      console.log(`Product inserted with ID: ${this.lastID}`);
+    }
+  });
+}
+
+// Insert each product into the database
+products.forEach((product) => {
+  insertProduct(product.image, product.title, product.price, product.category);
+});

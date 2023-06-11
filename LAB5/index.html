@@ -1,0 +1,54 @@
+<!--메인 페이지 만들기-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body>
+        <h1>Book recommendation for Beginners </h1>
+        <hr>
+        <!--네비게이션-->
+        <div class="flex-container">
+            <a href="/"><strong>메인페이지</strong></a>
+            <a href="/login"><strong>로그인</strong></a>
+            <a href="/signup"><strong>회원가입</strong></a>
+        </div>
+        <!--Main Contents-->
+        <hr>
+        <div class = "main-container">
+            <!--카테고리 선택 -->
+            <ul>
+                <li >Choose a category:
+                    <form action="/" method="GET">
+                        <select name="categorySelect">
+                          <option value="all">All</option>
+                          <option value="Python">Python</option>
+                          <option value="Machine Learning">Machine Learning</option>
+                          <option value="Java">Java</option>
+                          <option value="C">C</option>
+                        </select>
+                        <button type="submit">Search</button>
+                      </form>
+                </li>
+                <li>
+                    Choose a sort:
+                    <form action="/" method="GET">
+                        <select name="sortSelect">
+                          <option value="default">Default</option>
+                          <option value="asc">Price (Low to High)</option>
+                          <option value="desc">Price (High to Low)</option>
+                        </select>
+                        <button type="submit">Sort</button>
+                    </form>
+                </li>
+            </ul>
+
+            <!--Select book-->
+            <div id="booksContainer"></div>
+
+        </div>
+        <hr>
+    </body>
+</html>

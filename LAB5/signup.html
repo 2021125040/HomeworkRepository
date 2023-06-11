@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <h1>Book recommendation for Beginners</h1>
+
+        <!--login hyperlink button-->
+        <p><a href="/login"><strong>Login</strong></a><a href="/signup"><strong>Sign up</strong></a></p>
+
+        <form>
+            <h3>개인정보(필수)</h3>
+            <p><label>이름:
+                <input name = "text" type = "text" placeholder="이름을 입력하세요." autofocus autocomplete = "on" required/>
+            </label></p>
+            <p>
+                성별: <br>
+                <label>남성
+                    <input type = "radio" value="남성">
+                </label>
+                <label>여성
+                    <input type = "radio" value="여성">
+                </label>
+                <label>기타
+                    <input type = "radio" value="기타">
+                </label>
+            </p>
+            <p><label>생일:
+                <input name = "birthday" type = "date" />
+            </label></p>
+            <p><label>학년:
+                <input name = "number" type = "number" min = "1" max = "4" step="1" value= "2" />
+            </label></p>
+            <p><label>전화번호:
+                <input name = "tel" type = "tel" placeholder="(###)###-####" autocomplete = "on" />
+            </label></p>
+            <p><label>유저 아이디:
+                <input name = "text" type = "text" placeholder="아이디를 입력하세요." required/>
+            </label></p>
+            <p><label>비밀번호:
+                <input name = "text" type = "text" placeholder="비밀번호를 입력하세요." autocomplete = "off" required/>
+            </label></p>
+            <p><label>비밀번호 확인:
+                <input name = "text" type = "text" placeholder="비밀번호 확인" autocomplete = "off "required/>
+            </label></p>
+            <p>
+                <strong>어떻게 이 사이트를 알게 되셨나요?:</strong><br>
+                <label>검색 엔진(네이버, 구글 등)
+                    <input name = "howto" type = "checkbox" value="검색엔진">
+                </label>
+                <label>다른 사이트의 링크
+                    <input name = "howto" type = "checkbox" value="링크">
+                </label>
+                <label>광고
+                    <input name = "howto" type = "checkbox" value="책">
+                </label>
+                <label>기타
+                    <input name = "howto" type = "checkbox" value="other">
+                </label>
+            </p>
+            <p>
+                <input type = "submit" value = "Signup" />
+                <input type = "reset" value = "Cancel" />
+            </p>
+        </form>
+    </body>
+</html>

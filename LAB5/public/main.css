@@ -1,0 +1,137 @@
+h1{
+    font-size : 26pt;
+    font-family : sans-serif, arial;
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+
+input[type=submit]{
+    background-color: #04AA6D;
+    border: none;
+    width: 100px;
+    height: 40px;
+    color: white;
+    padding: 10px 32px;
+    cursor: pointer;
+}
+
+input[type=reset]{
+    background-color: #ff0000;
+    border: none;
+    width: 100px;
+    height: 40px;
+    color: white;
+    padding: 10px 32px;
+    cursor: pointer;
+}
+
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px;
+  }
+
+a:hover, a:active {
+    border-top: solid 3px red;
+    border-bottom: solid 3px red;
+  }
+
+
+/*
+이미지 위 텍스트 처리
+*/
+#booksContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding : 1px;
+  }
+
+.bookContainer {
+  position: relative;
+  width: 250px; height : 300px;
+  border: 7px solid #283593;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  Text-Align : Center;
+}
+
+.bookContainer img{
+  height : 60%;
+}
+
+.bookContainer .bookInfo {
+    color: #fff;
+    position: absolute; left: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.bookContainer:hover .bookInfo {
+    opacity: 1;
+}
+
+.bookContainer.bookInfo p{
+    font-size: 24px;
+    padding-bottom: 0.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+
+.flex-container {
+    display : flex;
+    flex-direction : row; /*row, row-reverse, column, column-reverse*/
+    flex-wrap : wrap;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+
+.main-container {
+    display : flex;
+    flex-direction : row ;
+}
+
+ul {
+    background-color: #ccc;
+    width : 400px;
+}
+
+@media (max-width: 480px) {
+    .flex-container {
+        display : flex;
+        flex-direction : column; /*row, row-reverse, column, column-reverse*/
+        flex-wrap : wrap;
+        justify-content: flex-start;
+    }
+
+}
+@media (max-width: 800px) {
+    .flex-container {
+        display : flex;
+        flex-direction : column; /*row, row-reverse, column, column-reverse*/
+        flex-wrap : wrap;
+        justify-content: flex-start;
+    }
+    .column-container {
+        display : flex;
+        flex-direction : column;
+    }
+    .column {
+        border: 1px solid rgb(0, 0, 0);
+        margin : 2px;
+        width : 100%;
+        height : 300px;
+    }
+}
